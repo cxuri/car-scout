@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "CarScout",
+  "version": "1.0.0",
+  "description": "CarScout scans car marketplaces and syncs with Fair Car Prices for real-time insights.",
+  "permissions": ["scripting", "storage", "activeTab"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.cardekho.com/*",
+        "*://cardekho.com/*",
+        "*://*.carwale.com/*",
+        "*://carwale.com/*",
+        "*://*.cars24.com/*",
+        "*://cars24.com/*",
+        "*://*.spinny.com/*",
+        "*://spinny.com/*",
+        "*://*.cartrade.com/*",
+        "*://cartrade.com/*",
+        "*://*.truebil.com/*",
+        "*://truebil.com/*",
+        "*://*.olx.in/*",
+        "*://olx.in/*",
+        "*://*.quikr.com/*",
+        "*://quikr.com/*",
+        "*://*.droom.in/*",
+        "*://droom.in/*",
+        "*://*.zigwheels.com/*",
+        "*://zigwheels.com/*",
+        "*://*.autoportal.com/*",
+        "*://autoportal.com/*",
+        "*://*.gaadi.com/*",
+        "*://gaadi.com/*",
+        "*://*.marutitruevalue.com/*",
+        "*://marutitruevalue.com/*",
+        "*://localhost/*",
+        "http://localhost:3000/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
