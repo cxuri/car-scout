@@ -1,3 +1,21 @@
+/***************************************************************
+ * Marketplace Scout - Background Script
+ *
+ * Author: Dhanesh U Pai
+ * GitHub: https://github.com/cxuri/car-scout
+ *
+ * Description:
+ * This background script listens for messages from the content script
+ * or webpage requesting a marketplace search. It fetches HTML pages
+ * from second-hand marketplaces (currently OLX) based on a query and
+ * location and sends the raw HTML back to the content script for parsing.
+ *
+ * Notes:
+ * - This script is only responsible for fetching HTML in real-time.
+ * - All parsing of listings (title, price, location, etc.) is handled
+ *   by the content script using the MarketplaceParser class.
+ ***************************************************************/
+
 // Background script handler
 chrome.runtime.onMessage.addListener(async (msg, sender) => {
   if (msg.type === "START_SCOUT" && sender.tab?.id) {
